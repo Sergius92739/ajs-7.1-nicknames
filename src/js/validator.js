@@ -1,9 +1,9 @@
 export default class Validator {
   validateUsername(name) {
-    const patternOne = /[a-z]/i.test(name);
-    const patternTwo = /^[^\d_-\W]+[\w-]*[^\d_-\W]$/.test(name);
-    const patternTree = /[\d]{3,}/.test(name);
-    if ((name.length === 1 && patternOne) || (patternTwo && !patternTree)) {
+    const pattern1 = /[a-z]/i.test(name);
+    const pattern2 = /^[^\d_-\W]+[\w-]*[^\d_-\W]$/.test(name);
+    const pattern3 = /[\d]{4}/.test(name);
+    if (pattern1 && pattern2 && !pattern3) {
       this.name = name;
       return true;
     }
